@@ -27,33 +27,25 @@
         </div>
 
         <div>
+
             <b>Known for</b>
+            {{#each known_for}}
             <ul>
                 <li>
-                    {{known_for.[0]}}
+                    {{[]}}
                 </li>
-                <li>
-                    {{known_for.[1]}}
-                </li>
-                <li>
-                    {{known_for.[2]}}
-                </li>
-                <li>
-                    {{known_for.[3]}}
-                </li>
-
             </ul>
-
+            {{/each}}
         </div>
         <br>
         <div>
             {{#each education}}
             <strong>Education:</strong>
-            <p>{{degree}}</p>
-            <p>{{field}}</p>
-            <p>{{institution}}</p>
+            <p><b>Degree:</b> {{degree}}</p>
+            <p><b>Field:</b> {{field}}</p>
+            <p><b>Institution:</b> {{institution}}</p>
             <time>
-                {{year}}
+                <b>Year:</b> {{year}}
             </time>
             {{/each}}
         </div>
@@ -67,11 +59,14 @@
                     <div>
                         <cite>{{title}}</cite>
                     </div>
+                    <p>
+                        Year:
+                        <time>
+                            {{year}}
+                        </time>
+                    </p>
                     <div>
-                        {{year}}
-                    </div>
-                    <div>
-                        {{publisher}}
+                        Publisher: {{publisher}}
                     </div>
                 </li>
             </ul>
@@ -85,8 +80,8 @@
             {{#each partners}}
             <ul>
                 <li>
-                    <div> {{name}}</div>
-                    <div>{{relationship}}</div>
+                    <div><b> {{name}}</b></div>
+                    <p>{{relationship}}</p>
                     <time>{{years}}</time>
                 </li>
             </ul>
@@ -106,43 +101,38 @@
         <div>
             <b>{{title}}</b>
         </div>
-        <div>{{year}}</div>
-        <q>{{description}}</q>
+        <p> <b>Year:</b> {{year}}</p>
+        <b>Description:</b> <q>{{description}}</q>
         {{/each}}
         <br>
         <br>
         <div>
             <p><strong>Influences:</strong></p>
+            {{#each influences}}
             <ul>
-                <li>{{influences.[0]}}</li>
-                <li>{{influences.[1]}}</li>
-                <li>{{influences.[2]}}</li>
+                <li>{{[]}}</li>
             </ul>
+            {{/each}}
         </div>
         <br>
         <div>
             <p><strong>Influenced:</strong></p>
+            {{#each influenced}}
             <ul>
-                <li>{{influenced.[0]}}</li>
-                <li>{{influenced.[1]}}</li>
-                <li>{{influenced.[2]}}</li>
-                <li>{{influenced.[3]}}</li>
+                <li>{{[]}}</li>
             </ul>
+            {{/each}}
         </div>
         <br>
         <article>
             <p><strong>Quotes:</strong></p>
+            {{#each quotes}}
             <ul>
                 <li>
-                    <p><q>{{quotes.[0]}}</q></p>
+                    <p><q>{{[]}}</q></p>
                 </li>
-
-                <li><q>{{quotes.[1]}}</q></li>
-                <li>
-                    <p><q>{{quotes.[2]}}</q></p>
-                </li>
-                <li><q>{{quotes.[3]}}</q></li>
             </ul>
+            {{/each}}
         </article>
         <br>
         <br>
@@ -150,12 +140,15 @@
             <p><strong>Major discovery:</strong></p>
             {{#each major_discoveries}}
             <div>
-                <strong>{{title}}</strong>
+                <strong>Title:</strong> {{title}}
             </div>
             <div>
-                <p>{{year}}</p>
+
+                <p><b>Year:</b> {{year}}</p>
             </div>
             <div>
+                <p> <b>Description:</b></p>
+
                 {{description}}
             </div>
             {{/each}}
@@ -164,11 +157,14 @@
         <div>
             {{#with contributions}}
             <p><b>{{title}}</b></p>
-            <div>{{description}}</div>
             <div>
-                <p>{{year}}</p>
+                <p> <b>Description:</b> </p>
+                {{description}}
             </div>
-            <div>{{field}}</div>
+            <div>
+                <p> <b>Time:</b> <time>{{year}}</time></p>
+            </div>
+            <div><b>Field:</b> {{field}}</div>
             {{/with}}
         </div>
     </section>
