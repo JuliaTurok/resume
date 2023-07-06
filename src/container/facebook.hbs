@@ -1,0 +1,59 @@
+<div>
+    <h1>
+        {{name}}
+    </h1>
+
+    <ul>
+        <strong>Users:</strong>
+        {{#each users}}
+        {{> commoninfo}}
+        <br>
+        <p>
+            <strong>
+                Friends:
+            </strong>
+        </p>
+        <ul>
+            {{#each friends}}
+            {{> commoninfo}}
+            <br>
+            <p>
+                <strong>Mutual friends:</strong>
+            </p>
+            <ul>
+                {{#each mutual_friends}}
+                {{> commoninfo}}
+                <br>
+                <ul>
+                    {{#each mutual_friends}}
+                    <p>
+                        <strong>Mutual friends:</strong>
+                    </p>
+                    {{> commoninfo}}
+                    {{/each}}
+                </ul>
+                {{/each}}
+            </ul>
+            {{/each}}
+        </ul>
+        <br>
+        <br>
+
+        <p>
+            <strong>
+                Groups:
+            </strong>
+        </p>
+        {{> group}}
+
+
+
+        {{#each friends}}
+
+        {{> group}}
+        {{/each}}
+        <br>
+        <br>
+        {{/each}}
+    </ul>
+</div>
