@@ -1,0 +1,15 @@
+<ul>
+    {{#each groups}}
+    {{> groupcommoninfo}}
+    <br>
+    <ul>
+        {{#each members}}
+        <p>
+            <strong>Members:</strong>
+        </p>
+        {{> commoninfo}}
+        {{/each}}
+        <br>
+    </ul>
+    {{/each}}
+</ul>
