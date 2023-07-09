@@ -1,0 +1,138 @@
+<div class="m-4">
+    <h1>{{name}}</h1>
+    <p>
+        {{description}}
+    </p>
+    <section>
+        <p>
+            <strong>History</strong>
+        </p>
+        {{#with history}}
+        <p>
+            Year: {{year}}
+        </p>
+        <div>
+            Founder: {{founder}}
+        </div>
+        {{/with}}
+    </section>
+    <section>
+        <p>
+            <strong>
+                Types:
+            </strong>
+        </p>
+        <ul>
+            {{#each types}}
+            <li class="badge bg-primary">
+                {{[]}}
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+    <section>
+        {{#with syntax}}
+        <p>
+            <strong>
+                Syntax:
+            </strong>
+        </p>
+        <ul>
+            Variables:
+            {{#each variables}}
+            <li class="badge bg-secondary ms-2">
+                {{[]}}
+            </li>
+            {{/each}}
+        </ul>
+
+        <ul>
+            Functions:
+            {{#each functions}}
+            <li class="badge bg-secondary ms-2">
+                {{[]}}
+            </li>
+            {{/each}}
+        </ul>
+        <ul>
+            Conditionals:
+            {{#each conditionals}}
+            <li class="badge bg-secondary ms-2">
+                {{[]}}
+            </li>
+            {{/each}}
+        </ul>
+
+        <ul>
+            Loops:
+            {{#each loops}}
+            <li class="badge bg-secondary ms-2">
+                {{[]}}
+            </li>
+            {{/each}}
+        </ul>
+
+        <ul>
+            Classes:
+            {{#each classes}}
+            <li class="badge bg-secondary ms-2">
+                {{[]}}
+            </li>
+            {{/each}}
+        </ul>
+        {{/with}}
+    </section>
+    <section>
+        <p>
+            <strong>Features:</strong>
+        </p>
+        <ul>
+            {{#each features}}
+            <li class="badge bg-success ">
+                {{[]}}
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+    <section>
+        <p>
+            <strong>Libraries:</strong>
+        </p>
+        <ul>
+            {{#each libraries}}
+            <li class="badge bg-info text-dark">
+                {{[]}}
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+    <section>
+        <p>
+            <strong>Tools:</strong>
+        </p>
+        <ul>
+            {{#each tools}}
+            <li class="badge bg-light text-dark">
+                {{[]}}
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+    <section>
+        <p>
+            <strong>
+                Community:
+            </strong>
+        </p>
+        <ul>
+            {{#each community}}
+            <li>
+                <button type="button" class="btn btn-link">{{name}}</button>
+                <p class="ms-3">
+                    Type: {{type}}
+                </p>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+</div>
