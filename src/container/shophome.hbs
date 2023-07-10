@@ -1,0 +1,73 @@
+<div class="ms-5 mt-5" style="width: 70rem;">
+    <div class="card">
+        {{#with navigation}}<nav class="nav m-2">
+            {{#each links}}
+
+            <a class="nav-link" href="{{href}}">{{text}}</a>
+            {{/each}}
+            <a class="nav-link disabled" href="#">Disabled</a>
+        </nav>
+
+        {{/with}}
+    </div>
+    {{#with newsBlock}}
+    <section>
+        <h1 class="text-center mt-5 mb-3">
+            {{title}}
+        </h1>
+        <div class="row">
+            {{#each cards}}
+            <div class="card col-3 bg-dark text-light m-3">
+                <div class="card-header"><b>{{title}}</b>
+                    {{#if isTop}}
+                    <div class="badge bg-danger text-light rounded-pill">
+                        Top
+                    </div>
+                    {{else}}
+
+                    {{/if}}
+                    {{#if isNew}}
+                    <div class="badge bg-success text-light rounded-pill">
+                        New
+                    </div>
+                    {{else}}
+
+                    {{/if}}
+                </div>
+                <div class="card-body">
+                    {{description}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/with}}
+    <hr class="mt-5 mb-5">
+    {{#with goodsBlock}}
+    <nav>
+        <div class="nav nav-tabs">
+            {{#each tabs}}
+            {{#if isActive}}
+            <button class="nav-link active" data-bs-toggle="tab" type="button" aria-selected="true">{{text}}</button>
+            {{else if isDisabled}}
+            <button class="nav-link disabled" data-bs-toggle="tab" type="button" aria-disabled="true">{{text}}</button>
+            {{else}}
+            <button class="nav-link" data-bs-toggle="tab" type="button" aria-selected="false">{{text}}</button>
+            {{/if}}
+            {{/each}}
+        </div>
+    </nav>
+    <div class="row">
+        {{#each cards}}
+        <div class="card col-4">
+            <img src="{{image}}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+</div>
