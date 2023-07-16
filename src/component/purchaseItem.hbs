@@ -1,0 +1,39 @@
+<tbody>
+    <tr>
+        <div class="row">
+            <td class="col-4 pt-4">
+                <p>{{number}}</p>
+
+                <div>
+                    <strong>{{status}}</strong>
+                </div>
+
+            </td>
+
+            <td class="col-2 pt-4">
+                {{#with amount}}
+                <p>
+                    {{title}}:
+                </p>
+                <div><strong>{{value}}</strong></div>
+                {{/with}}
+
+            </td>
+
+            <td class="col-4">
+                {{#each images}}
+                <img src="{{[]}}" class="rounded-1">
+                {{/each}}
+
+            </td>
+
+            <td class="col-2 pt-5">
+                {{#with button}}
+                {{#if isPrimary}}
+                <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                {{/if}}
+                {{/with}}
+
+            </td>
+    </tr>
+</tbody>
