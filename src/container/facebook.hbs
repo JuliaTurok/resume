@@ -2,58 +2,65 @@
     <h1>
         {{name}}
     </h1>
+    <h2 class="mb-4 mt-3">Users:</h2>
+    <div class="row">
 
-    <ul>
-        <strong>Users:</strong>
+
         {{#each users}}
-        {{> commoninfo}}
-        <br>
-        <p>
-            <strong>
-                Friends:
-            </strong>
-        </p>
-        <ul>
-            {{#each friends}}
-            {{> commoninfo}}
-            <br>
-            <p>
-                <strong>Mutual friends:</strong>
-            </p>
-            <ul>
-                {{#each mutual_friends}}
-                {{> commoninfo}}
-                <br>
-                <ul>
-                    {{#each mutual_friends}}
-                    <p>
-                        <strong>Mutual friends:</strong>
-                    </p>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+
                     {{> commoninfo}}
+                </div>
+                <div class="card-body">
+                    <p class="mt-3">
+                        <strong>
+                            Friends:
+                        </strong>
+                    </p>
+                    <ul class="mb-4">
+                        {{#each friends}}
+                        {{> commoninfo}}
+                        <br>
+                        <p>
+                            <strong>Mutual friends:</strong>
+                        </p>
+                        <ul>
+                            {{#each mutual_friends}}
+                            {{> commoninfo}}
+                            <br>
+                            <ul>
+                                {{#each mutual_friends}}
+                                <p>
+                                    <strong>Mutual friends:</strong>
+                                </p>
+                                {{> commoninfo}}
+                                {{/each}}
+                            </ul>
+                            {{/each}}
+                        </ul>
+                        {{/each}}
+                    </ul>
+
+                    <hr class="mb-5 mt-5">
+                    <p>
+                        <strong>
+                            Groups:
+                        </strong>
+                    </p>
+                    {{> group}}
+
+
+
+                    {{#each friends}}
+
+                    <div class="mb-4">{{> group}}</div>
                     {{/each}}
-                </ul>
-                {{/each}}
-            </ul>
-            {{/each}}
-        </ul>
-        <br>
-        <br>
 
-        <p>
-            <strong>
-                Groups:
-            </strong>
-        </p>
-        {{> group}}
-
-
-
-        {{#each friends}}
-
-        {{> group}}
+                </div>
+            </div>
+        </div>
         {{/each}}
-        <br>
-        <br>
-        {{/each}}
-    </ul>
+    </div>
 </div>

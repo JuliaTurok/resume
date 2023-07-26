@@ -1,7 +1,8 @@
 <div>
     {{#with program}}
     {{#with excursion}}
-    <section>
+    <hr class="mb-5 mt-4">
+    <section class="text-center">
         <h1>{{name}}</h1>
         <div>
             {{#with location}}
@@ -18,183 +19,189 @@
         </address>
         <time><b>Date:</b> {{date}}</time>
     </section>
-
-    <section>
+    <hr class="mb-5 mt-4">
+    <div class="row">
         {{#each program}}
-        <ul>
-            <li>
-                <div>
-                    <p>
-                        <strong>
-                            Program name:
-                        </strong>
-                        {{name}}
-                    </p>
-                    <p>
-                        <b> Type: </b> {{type}}
-                    </p>
-                    <p>
-                        <b>Duration:</b> {{duration}}
-                    </p>
-                </div>
-
-                <div>
-                    {{#with details}}
-
-                    {{#with museum}}
-                    <p>
-                        <b>
-                            Museum name:
-                        </b>
-                        {{name}}
-                    </p>
-                    <br>
-
-                    {{#with location}}
-                    <address>
-                        <div>
-                            <b>Address:</b>
-                            {{address}}
-                        </div>
-                        <p>
-                            <b>City:</b> {{city}}
-                        </p>
-                        <div>
-                            <b>Country:</b>
-                            {{country}}
-                        </div>
-                    </address>
-                    {{/with}}
-                    <br>
-                    <br>
-                    <b>Exhibits:</b>
-                    {{#each exhibits}}
-
-                    <ul>
-                        <li>
-                            <p>
-                                <b>Name:</b>
-                                {{name}}
-                            </p>
-                            <div>
-                                <b>
-                                    Artist:
-                                </b>
-                                {{#if artist}}
-                                {{artist}}
-                                {{else}}
-                                Немає
-                                {{/if}}
-                            </div>
-                            <p>
-                                <b>
-                                    Description:
-                                </b>
-                                {{description}}
-                            </p>
-                            <div>
-                                <b>Audio guide:</b>
-                                {{audio_guide}}
-                            </div>
-                        </li>
-                    </ul>
-                    {{/each}}
-                    {{/with}}
-
-                    {{#with venue}}
-                    <p>
-                        <b>
-                            Name:
-                        </b>
-                        {{name}}
-                    </p>
-                    <br>
-
-                    <address>
-                        {{#with location}}
-                        <div>
-                            <b>
-                                Address:
-                            </b>
-                            {{address}}
-                        </div>
-                        <p>
-                            <b>
-                                City:
-                            </b>
-                            {{city}}
-                        </p>
-                        <div>
-                            <b>
-                                Country:
-                            </b>
-                            {{country}}
-                        </div>
-                        {{/with}}
-                    </address>
-                    {{/with}}
-                    <br><br>
-                    {{#each performers}}
-                    <ul>
-
+        <div class="col-6">
+            <div class="card bg-light">
+                <div class="card-body ms-5">
+                    <div class="mt-5">
                         <p>
                             <strong>
-                                Performer:
+                                Program name:
                             </strong>
+                            {{name}}
                         </p>
-                        <li>
+                        <p>
+                            <b> Type: </b> {{type}}
+                        </p>
+                        <p>
+                            <b>Duration:</b> {{duration}}
+                        </p>
+                    </div>
+
+                    <div>
+                        {{#with details}}
+
+                        {{#with museum}}
+                        <p class="mb-5">
+                            <b>
+                                Museum name:
+                            </b>
+                            {{name}}
+                        </p>
+
+
+                        {{#with location}}
+                        <address>
                             <div>
+                                <b>Address:</b>
+                                {{address}}
+                            </div>
+                            <p>
+                                <b>City:</b> {{city}}
+                            </p>
+                            <div class="mb-5">
+                                <b>Country:</b>
+                                {{country}}
+                            </div>
+                        </address>
+                        {{/with}}
+
+                        <p> <b>Exhibits:</b></p>
+                        {{#each exhibits}}
+
+                        <ul>
+                            <li class="mb-4">
+                                <p>
+                                    <b>Name:</b>
+                                    {{name}}
+                                </p>
+                                <div>
+                                    <b>
+                                        Artist:
+                                    </b>
+                                    {{#if artist}}
+                                    {{artist}}
+                                    {{else}}
+                                    Немає
+                                    {{/if}}
+                                </div>
+                                <p>
+                                    <b>
+                                        Description:
+                                    </b>
+                                    {{description}}
+                                </p>
+                                <div>
+                                    {{#if audio_guide}}
+                                    <b>Audio guide:</b>
+                                    <i class="bi bi-play-circle"></i>
+                                    {{/if}}
+                                </div>
+                            </li>
+                        </ul>
+                        {{/each}}
+                        {{/with}}
+
+                        {{#with venue}}
+                        <p class="mb-4">
+                            <b>
+                                Name:
+                            </b>
+                            {{name}}
+                        </p>
+
+
+                        <address class="mb-5">
+                            {{#with location}}
+                            <div class="mt-5">
                                 <b>
-                                    Name:
+                                    Address:
                                 </b>
-                                {{name}}
+                                {{address}}
                             </div>
                             <p>
                                 <b>
-                                    Type:
+                                    City:
                                 </b>
-                                {{type}}
+                                {{city}}
                             </p>
-                        </li>
-                    </ul>
-                    {{/each}}
-                    <br>
+                            <div>
+                                <b>
+                                    Country:
+                                </b>
+                                {{country}}
+                            </div>
+                            {{/with}}
+                        </address>
+                        {{/with}}
+                        {{#if performers}}
+                        <p class="mt-5">
+                            <strong>
+                                Performers:
+                            </strong>
+                        </p>
+                        {{else}}
 
-                    <p>
-                        <strong>
-                            Guide:
-                        </strong>
-                    </p>
-                    {{#with guide}}
-                    <div>
-                        <b>
-                            Name:
-                        </b>
-                        {{name}}
+                        {{/if}}
+                        {{#each performers}}
+
+                        <ul>
+                            <li>
+                                <div>
+                                    <b>
+                                        Name:
+                                    </b>
+                                    {{name}}
+                                </div>
+                                <p>
+                                    <b>
+                                        Type:
+                                    </b>
+                                    {{type}}
+                                </p>
+                            </li>
+                        </ul>
+                        {{/each}}
+
+
+                        <p class="mt-5">
+                            <strong>
+                                Guide:
+                            </strong>
+                        </p>
+                        {{#with guide}}
+                        <div>
+                            <b>
+                                Name:
+                            </b>
+                            {{name}}
+                        </div>
+                        <p>
+                            <b>
+                                Language:
+                            </b>
+                            {{language}}
+                        </p>
+                        <div class="mb-5">
+                            <b>
+                                Rating:
+                            </b>
+                            {{rating}}
+                        </div>
+                        {{/with}}
+                        {{/with}}
                     </div>
-                    <p>
-                        <b>
-                            Language:
-                        </b>
-                        {{language}}
-                    </p>
-                    <div>
-                        <b>
-                            Rating:
-                        </b>
-                        {{rating}}
-                    </div>
-                    {{/with}}
-                    {{/with}}
+
                 </div>
-                <br>
-                <br>
-                <br>
-                <br>
-            </li>
-        </ul>
+            </div>
+        </div>
+
         {{/each}}
-    </section>
+
+    </div>
+
     {{/with}}
     {{/with}}
 </div>

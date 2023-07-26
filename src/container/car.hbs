@@ -1,20 +1,23 @@
 <div class="ms-5 mt-5">
-    <section>
-        <h1>
-            <dfn title="Car brand"> {{make}}</dfn>
-        </h1>
-        <h2>
-            <dfn title="Model">{{model}}</dfn>
-        </h2>
-        <br>
-        <h4>
-            Year: {{year}}
-        </h4>
-        <h4>
-            Color: {{color}}
-        </h4>
-    </section>
-    <section>
+    <div class="card text-center" style="width: 70rem;">
+        <div class="card-body">
+            <h1>
+                <dfn title="Car brand"> {{make}}</dfn>
+            </h1>
+            <h2>
+                <dfn title="Model">{{model}}</dfn>
+            </h2>
+            <br>
+            <h4>
+                Year: {{year}}
+            </h4>
+            <h4>
+                Color: {{color}}
+            </h4>
+        </div>
+    </div>
+
+    <section class="mt-5">
         <h5>
             Features:
         </h5>
@@ -214,6 +217,7 @@
         </div>
         {{/with}}
     </section>
+    <hr class="mt-5 mb-5" style="width: 73rem;">
     <section>
         {{#with engine}}
         <h5>
