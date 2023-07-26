@@ -1,186 +1,203 @@
 <div>
-    <div>
+    <div class="mb-5">
         <h1>
             Programming languages
         </h1>
     </div>
     {{#with web}}
-    {{#each languages}}
-    <ul>
-        <li>
-            <section>
-                <div>
+    <div class="row">
+        {{#each languages}}
+        <div class="col-4">
+            <div class="card ">
+                <div class="card-header bg-info">
+                    <div>
 
-                    <h2><abbr title=""> {{name}}</abbr></h2>
+                        <h2><abbr title=""> {{name}}</abbr></h2>
+                    </div>
+                    <p>
+                        <b>
+                            Version:
+                        </b>
+                        <abbr title=""> {{version}}</abbr>
+                    </p>
+                    <div>
+                        <b>
+                            Description:
+                        </b>
+                        {{description}}
+                    </div>
                 </div>
-                <p>
-                    <b>
-                        Version:
-                    </b>
-                    <abbr title=""> {{version}}</abbr>
-                </p>
-                <div>
-                    <b>
-                        Description:
-                    </b>
-                    {{description}}
-                </div>
-            </section>
-            <section>
-                {{#if properties}}
-                <mark>
-                    <strong>
-                        Properties
-                    </strong>
-                </mark>
-                <br>
-                <br>
-                {{/if}}
-                {{#if elements}}
-                <mark>
-                    <strong>
-                        Elements
-                    </strong>
-                </mark>
-                <br>
-                <br>
-                {{/if}}
-                {{#if functions}}
-                <mark>
-                    <strong>
-                        Functions
-                    </strong>
-                </mark>
-                <br>
-                <br>
-                {{/if}}
+                <div class="card-body">
+                    <div class="card m-3">
 
-                {{#each elements}}
-                <ul>
-                    <li>
-                        <p>
-                            <strong>
-                                Name:
-                            </strong>
-                            {{name}}
-                        </p>
-                        <p>
-                            <b>
-                                Description:
-                            </b>
-                            {{description}}
-                        </p>
+                        <div class="card-header  bg-primary text-light">
 
-                        <ul>
-                            {{#each attributes}}
-                            <li>
-                                <div>
+
+                            {{#if properties}}
+                            <div class="card-title">
+                                <strong>
+                                    Properties
+                                </strong>
+
+                            </div>
+                            {{/if}}
+                            {{#if elements}}
+                            <div class="card-title">
+                                <strong>
+                                    Elements
+                                </strong>
+
+                            </div>
+                            {{/if}}
+
+                            {{#if functions}}
+                            <div class="card-title">
+                                <strong>
+                                    Functions
+                                </strong>
+
+                            </div>
+
+                            {{/if}}
+                        </div>
+                        <div class="card-body bg-light">
+                            {{#each elements}}
+
+                            <div class="ms-4">
+                                <p>
                                     <strong>
                                         Name:
                                     </strong>
                                     {{name}}
-                                </div>
+                                </p>
                                 <p>
-                                    <strong>
+                                    <b>
                                         Description:
-                                    </strong>
+                                    </b>
                                     {{description}}
                                 </p>
-                            </li>
-                            {{/each}}
-                        </ul>
-                    </li>
-                </ul>
-                <br>
-                <br>
-                {{/each}}
 
-                {{#each properties}}
-                <ul>
-                    <li>
-                        <p>
-                            <strong>
-                                Name:
-                            </strong>
-                            {{name}}
-                        </p>
-                        <p>
-                            <strong>
-                                Description:
-                            </strong>
-                            {{description}}
-                        </p>
-                        <ul>{{#each values}}
-                            <li>
-                                <div>
-                                    <strong>
-                                        Value:
-                                    </strong>
-                                    {{value}}
-                                </div>
+
+                                <ul>
+                                    {{#each attributes}}
+                                    <li>
+                                        <div>
+                                            <strong>
+                                                Name:
+                                            </strong>
+                                            {{name}}
+                                        </div>
+                                        <p>
+                                            <strong>
+                                                Description:
+                                            </strong>
+                                            {{description}}
+                                        </p>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+
+                            </div> {{#if @last}}
+                            {{else}}
+                            <hr class="mb-5 mt-4">
+                            {{/if}}
+                            {{/each}}
+
+                            {{#each properties}}
+
+                            <div class="ms-4">
                                 <p>
-                                    <strong>
-                                        Description:
-                                    </strong>
-                                    {{description}}
-                                </p>
-                            </li>
-                            {{/each}}
-                        </ul>
-                    </li>
-                </ul>
-                <br>
-                <br>
-                {{/each}}
-                {{#each functions}}
-                <ul>
-                    <li>
-                        <p>
-                            <strong>
-                                Name:
-                            </strong>
-                            {{name}}
-                        </p>
-                        <p>
-                            <strong>
-                                Description:
-                            </strong>
-                            {{description}}
-                        </p>
-
-                        <p><strong>Parameters</strong> </p>
-                        <ul>
-                            {{#each parameters}}
-                            <li>
-                                <div>
                                     <strong>
                                         Name:
                                     </strong>
                                     {{name}}
-                                </div>
-                                <p>
-                                    <strong>
-                                        Type:
-                                    </strong>
-                                    {{type}}
                                 </p>
-                                <div>
+                                <p>
                                     <strong>
                                         Description:
                                     </strong>
                                     {{description}}
-                                </div>
-                                <br>
-                                <br>
-                            </li>
+                                </p>
+                                <ul>{{#each values}}
+                                    <li>
+                                        <div>
+                                            <strong>
+                                                Value:
+                                            </strong>
+                                            {{value}}
+                                        </div>
+                                        <p>
+                                            <strong>
+                                                Description:
+                                            </strong>
+                                            {{description}}
+                                        </p>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                            {{#if @last}}
+                            {{else}}
+                            <hr class="mb-5 mt-4">
+                            {{/if}}
+
                             {{/each}}
-                        </ul>
-                    </li>
-                </ul>
-                {{/each}}
-            </section>
-        </li>
-    </ul>
-    {{/each}}
+                            {{#each functions}}
+                            <div class="ms-4">
+                                <p>
+                                    <strong>
+                                        Name:
+                                    </strong>
+                                    {{name}}
+                                </p>
+                                <p>
+                                    <strong>
+                                        Description:
+                                    </strong>
+                                    {{description}}
+                                </p>
+
+                                <p><strong>Parameters</strong> </p>
+                                <ul>
+                                    {{#each parameters}}
+                                    <li>
+                                        <div>
+                                            <strong>
+                                                Name:
+                                            </strong>
+                                            {{name}}
+                                        </div>
+                                        <p>
+                                            <strong>
+                                                Type:
+                                            </strong>
+                                            {{type}}
+                                        </p>
+                                        <div>
+                                            <strong>
+                                                Description:
+                                            </strong>
+                                            {{description}}
+                                        </div>
+                                        <br>
+                                        <br>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                            {{#if @last}}
+                            {{else}}
+                            <hr class="mb-5 mt-4">
+                            {{/if}}
+                            {{/each}}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
     {{/with}}
 </div>

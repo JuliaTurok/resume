@@ -1,9 +1,11 @@
 {{#with person}}
-<div>
-    <section>
+<div class="card ms-5" style="width: 70rem;">
+    <div class="card-header bg-primary text-light">
         <h1>
             {{name}}
         </h1>
+    </div>
+    <div class="card-body mt-3">
         <p>
             <b>
                 Age: </b>{{age}}
@@ -40,234 +42,255 @@
         </address>
         {{/with}}
 
-    </section>
 
-    <br>
 
-    {{#each education}}
-    <section>
-        <div>
+    </div>
+    <div class="card mt-5">
+        {{#each education}}
+
+        <div class="card-header bg-warning">
             <h2> Education</h2>
-        </div>
-        <p>
-            <b>Degree:</b> {{degree}}
-        </p>
-        <p>
-            {{major}}
-        </p>
-        <p><strong>University: </strong>{{university}}</p>
-        <time><b> Graduation year:</b> 2012</time>
-    </section>
-    {{/each}}
 
-    {{#each workExperience}}
-    <section>
-        <div>
+        </div>
+        <div class="card-body mt-3">
             <p>
-            <h2>Work experience</h2>
+                <b>Degree:</b> {{degree}}
             </p>
-        </div>
-        <div>
             <p>
-                <b>Company:</b> {{company}}
+                <b> {{major}}</b>
             </p>
+            <p><strong>University: </strong>{{university}}</p>
+            <time><b> Graduation year:</b> 2012</time>
         </div>
-        <div>
-            <p>
-                <b>Position:</b> {{title}}
-            </p>
-        </div>
-        <time>
-            <b>Duration:</b> {{startDate}} - {{endDate}}
-        </time>
-        <br>
-        <br>
-        <div>
-            <b>Responsibilities:</b>
-            {{#each responsibilities}}
-            <ul>
-                <li>
-                    {{[]}}
-                </li>
-            </ul>
+        {{/each}}
 
-            {{/each}}
+        {{#each workExperience}}
+        <div class="card mt-5">
 
-        </div>
-        <div>
-            <b> Year founded:</b> <time>{{year_founded}}</time>
-        </div>
-        <p>
-            <b>Industry:</b> {{industry}}
-        </p>
-    </section>
 
-    <br>
-    {{#each employees}}
-    <section>
-        <div>
-            <ul>
+            <div class="card-header bg-dark text-light">
+                <p>
+                <h2>Work experience</h2>
+                </p>
+            </div>
+            <div class="card-body mt-4">
                 <div>
-                    <h3>
-                        Employees
-                    </h3>
-                </div>
-                <div>
-
-                    <li>
-                        <p>
-                            <strong>
-                                Name:
-                            </strong>
-                            {{name}}
-                        </p>
-                        <p>
-                            <b>Position:</b> {{position}}
-                        </p>
-                        <p>
-                            <b>Department:</b> {{department}}
-                        </p>
-                    </li>
-                </div>
-                <br>
-                <div>
-                    <h3>
-                        Projects
-                    </h3>
-                </div>
-                {{#each projects}}
-
-                <ul>
-                    <li>
-                        <div>
-                            <b>Name:</b>
-                            {{name}}
-                        </div>
-                        <p>
-                            <b>Description:</b> {{description}}
-                        </p>
-                        <div>
-                            <b>Status:</b> {{status}}
-                        </div>
-                        <br>
-                        {{#each teams}}
-                        <ul>
-                            <b>Team:</b>
-                            <div>
-                                <li>
-                                    <p>
-                                        <strong>
-                                            Team name:
-                                        </strong>
-                                        "{{team_name}}"
-                                    </p>
-                            </div>
-
-                            {{#with team_leader}}
-                            <p>
-                                <b>{{name}}</b> ({{title}})
-                            </p>
-
-                            <div>
-                                <a href="mailto:{{email}}"> {{email}}</a>
-                            </div>
-                            {{/with}}
-                    </li>
-
-                    <br>
-                    <br>
-                    {{#each team_members}}
-                    <ul>
-                        <p> <b>Members:</b></p>
-                        <li>
-                            <p>
-                                <b>
-                                    {{name}}
-                                </b>
-                                ({{title}})
-                            </p>
-
-                            <div>
-                                <a href="mailto:{{email}}"> {{email}}</a>
-                            </div>
-                            <div>
-                                <div>
-                                    <p>
-                                        <b>Skills</b>
-                                    </p>
-                                </div>
-                                {{#each skills}}
-                                <ul>
-                                    <li>
-                                        {{[]}}
-                                    </li>
-                                </ul>
-                                {{/each}}
-                            </div>
-                        </li>
-                    </ul>
-                </ul>
-
-
-                </li>
-                <br>
-                <br>
-                <li>
-                    {{#each projects}}
                     <p>
-                        <b>
-                            Name:
-                        </b>
-                        {{name}}
+                        <b>Company:</b> {{company}}
                     </p>
-                    <div>
-                        <b>Description:</b> {{description}}
-                    </div>
-                    <br>
-                    <div>
-                        <p>
-                            <b> Technologies</b>
-                        </p>
-                    </div>
-                    <div>
-                        {{#each technologies}}
-                        <ul>
-                            <li>
-                                {{[]}}
-                            </li>
-                        </ul>
-                        {{/each}}
-                    </div>
-                    <br>
-                    <div>
-                        <p>
-                            <b>Team members</b>
-                        </p>
-                    </div>
-                    {{#each team_members}}
+                </div>
+                <div>
+                    <p>
+                        <b>Position:</b> {{title}}
+                    </p>
+                </div>
+                <time>
+                    <b>Duration:</b> {{startDate}} - {{endDate}}
+                </time>
+
+                <div class="mt-4">
+                    <p> <b>Responsibilities:</b></p>
+                    {{#each responsibilities}}
                     <ul>
                         <li>
-                            <div>
-                                <b>{{name}}</b>
-                            </div>
-                            {{title}}
-                            <br>
-                            <br>
+                            {{[]}}
                         </li>
                     </ul>
+
                     {{/each}}
-                </li>
+
+                </div>
+                <p>
+                    <b> Year founded:</b> <time>{{year_founded}}</time>
+                </p>
+                <p>
+                    <b>Industry:</b> {{industry}}
+                </p>
+
+
+
+                <div class="card mt-5">
+                    {{#each employees}}
+                    <div class="card-header bg-info">
+
+
+                        <div class="mb-3">
+                            <h3>
+                                Employees
+                            </h3>
+                        </div>
+                        <div>
+
+
+                            <p>
+                                <strong>
+                                    Name:
+                                </strong>
+                                {{name}}
+                            </p>
+                            <p>
+                                <b>Position:</b> {{position}}
+                            </p>
+                            <p>
+                                <b>Department:</b> {{department}}
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="card-body mt-3">
+                        <div class="card">
+
+                            <div class="card-header">
+                                <div>
+                                    <h3>
+                                        Projects
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mt-4">
+                                    <div class="col-7 ps-5">
+                                        {{#each projects}}
+
+
+
+                                        <p>
+                                            <b>Name:</b>
+                                            {{name}}
+                                        </p>
+                                        <p>
+                                            <b>Description:</b> {{description}}
+                                        </p>
+                                        <div class="mb-3">
+                                            <b>Status:</b> {{status}}
+                                        </div>
+
+                                        {{#each teams}}
+                                        <p><b>Team:</b></p>
+                                        <ul>
+
+                                            <div>
+                                                <li>
+                                                    <p>
+                                                        <strong>
+                                                            Team name:
+                                                        </strong>
+                                                        "{{team_name}}"
+                                                    </p>
+                                            </div>
+
+                                            {{#with team_leader}}
+                                            <p>
+                                                <b>{{name}}</b> ({{title}})
+                                            </p>
+
+                                            <div class="mb-4">
+                                                <a href="mailto:{{email}}"> {{email}}</a>
+                                            </div>
+                                            {{/with}}
+                                            </li>
+
+
+                                            {{#each team_members}}
+                                            <p> <b>Members:</b></p>
+                                            <ul>
+
+                                                <li>
+                                                    <p>
+                                                        <b>
+                                                            {{name}}
+                                                        </b>
+                                                        ({{title}})
+                                                    </p>
+
+                                                    <p>
+                                                        <a href="mailto:{{email}}"> {{email}}</a>
+                                                    </p>
+                                                    <div>
+
+                                                        <p>
+                                                            <b>Skills</b>
+                                                        </p>
+
+                                                        {{#each skills}}
+                                                        <ul>
+                                                            <li>
+                                                                {{[]}}
+                                                            </li>
+                                                        </ul>
+                                                        {{/each}}
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </ul>
+
+
+                                    </div>
+
+                                    <div class="col-4">
+                                        {{#each projects}}
+                                        <p>
+                                            <b>
+                                                Name:
+                                            </b>
+                                            {{name}}
+                                        </p>
+                                        <p>
+                                            <b>Description:</b> {{description}}
+                                        </p>
+
+                                        <div class="mt-3">
+                                            <p>
+                                                <b> Technologies</b>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            {{#each technologies}}
+                                            <ul>
+                                                <li>
+                                                    {{[]}}
+                                                </li>
+                                            </ul>
+                                            {{/each}}
+                                        </div>
+
+                                        <div class="mt-3">
+                                            <p>
+                                                <b>Team members</b>
+                                            </p>
+                                        </div>
+                                        {{#each team_members}}
+                                        <ul>
+                                            <li>
+                                                <div class="mb-3">
+                                                    <b>{{name}}</b>
+                                                </div>
+                                                {{title}}
+
+                                            </li>
+                                        </ul>
+                                        {{/each}}
+
+                                        {{/each}}
+                                    </div>
+                                    {{/each}}
+
+
+                                    {{/each}}
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {{/each}}
-                {{/each}}
-            </ul>
+            </div>
         </div>
         {{/each}}
-        {{/each}}
-    </section>
-    {{/each}}
-    {{/each}}
+    </div>
 </div>
 </li>
-</ul>
+
 </div>
 {{/with}}

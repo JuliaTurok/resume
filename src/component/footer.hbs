@@ -1,22 +1,22 @@
 {{#with footer}}
 <footer>
-    <hr>
-    <br>
-    <div>
-        {{#with social}}
+    <hr class="mb-4">
 
-        {{> link text=email.text href=email.href blank=true }}
-        {{> link text=phone.text href=phone.href blank=true }}
-        {{> link text=linkedin.text href=linkedin.href blank=true noLine=true }}
 
-        {{/with}}
-    </div>
-    <br>
-    <div>
+    {{#with social}}
+    <nav class="mt-4 mb-4 breadcrumb">
+        <div class="breadcrumb-item"> {{> link text=email.text href=email.href blank=true }}</div>
+        <div class="breadcrumb-item"> {{> link text=phone.text href=phone.href blank=true }} </div>
+        <div class="breadcrumb-item"> {{> link text=linkedin.text href=linkedin.href blank=true noLine=true }} </div>
+    </nav>
+    {{/with}}
+
+
+    <div class="ms-4">
         <em>Copyright {{../header/name/firstname}} {{../header/name/lastname}}</em>
     </div>
-    <br>
-    <div>
+
+    <div class="mt-4 ms-4">
         <address> {{../header/address}}</address>
     </div>
 </footer>

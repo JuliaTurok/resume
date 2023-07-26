@@ -8,15 +8,15 @@
     <main>
         <section>
             {{> title data="Work history" big=true }}
-            <div>
+            <div class="mt-4">
                 <ul>
                     {{#each works}}
-                    <li>
+                    <li class="mb-3">
                         <div>{{position}}</div>
 
-                        <br>
 
-                        <div>
+
+                        <div class="mt-3">
                             {{duration.from}} -
                             {{#if duration.to}}
                             {{duration.to}}
@@ -25,36 +25,34 @@
                             {{/if}}
                         </div>
 
-                        <br>
 
-                        <div>
+
+                        <div class="mt-3">
                             {{#if company.url}} {{> link text=company.name href=company.url blank=true noLine=true}}
                         </div>
                         {{else}}
                         <b>{{company.name}}</b>
                         {{/if}}
-                        <br>
-                        <br>
 
-                        <div>
+                        <div class="mt-4 mb-4">
                             <strong> Projects ({{projectAmount}})</strong>
                         </div>
-                        <br>
+
                         <ul>
                             {{#each projects}}
                             <li>
 
                                 <div> {{> link text=name href=url blank=true noLine=true}}</div>
-                                <br>
+
                                 <div>
                                     <p>{{about}}</p>
                                 </div>
-                                <br>
-                                <div>
+
+                                <div class="mt-3 mb-3">
                                     <em>Project stacks</em>
                                     ({{stackAmount}})
                                 </div>
-                                <br>
+
                                 <div>
                                     <ul>
                                         {{#each stacks}}
@@ -62,11 +60,11 @@
                                         {{/each}}
                                     </ul>
                                 </div>
-                                <br>
-                                <div>
+
+                                <div class="mt-3 mb-3">
                                     <em>Project awards</em>
                                 </div>
-                                <br>
+
                                 <div>
                                     <ul>
                                         {{#each awards}}
@@ -79,7 +77,7 @@
                             {{/each}}
                         </ul>
                     </li>
-                    <br>
+
                     {{/each}}
 
                 </ul>
